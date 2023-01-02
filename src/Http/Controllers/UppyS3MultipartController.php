@@ -102,7 +102,7 @@ class UppyS3MultipartController extends Controller
         try {
             $result = $this->client->createMultipartUpload([
                 'Bucket'             => $this->bucket,
-                'Key'                => $key,
+                'Key'                => $this->encodeURIComponent($key),
                 'ContentType'        => $type,
                 'ContentDisposition' => 'inline',
             ]);
