@@ -16,7 +16,7 @@ class UppyS3MultipartController extends Controller
     public function __construct()
     {
         // Updated for Laravel9 Support
-        $this->client = Storage::disk('s3')->getClient();
+        $this->client = Storage::disk('r2')->getClient();
 
         $this->bucket = config('filesystems.disks.s3.bucket');
     }
